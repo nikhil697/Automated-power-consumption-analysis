@@ -6,5 +6,14 @@ from django.http import HttpResponse,request
 def index(request):
     return HttpResponse("Index Dashboard")
 
-def home(request):
-    return render(request, 'dashboard/homepage.html')
+def login(request):
+    return render(request, 'dashboard/loginpage.html')
+
+def dash(request):
+    return render(request, 'dashboard/dashdisplay.html')
+def reset(request):
+    return render(request, 'dashboard/resetpass.html')
+def resetsuccess(request):
+    return render(request, 'dashboard/resetsuccess.html')
+
+
