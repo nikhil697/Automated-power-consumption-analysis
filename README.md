@@ -1,1 +1,3 @@
-# Automated-power-consumption-analysis
+# PowerSight
+
+## Automate Meter Reading and Empower sustainable choices
