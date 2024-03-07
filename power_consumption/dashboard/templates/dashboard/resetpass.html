@@ -152,12 +152,12 @@
             src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_3,f_auto,g_center,h_175,q_auto:good,w_175/v1/gcs/platform-data-dsc/events/TI_LOGO_1lqNVbw.png"
             alt="avatar" />
         <h1 class="heading">Reset Password</h1>
-        <form action="{% url 'resetsuccess' %}" method="POST" class="inputs">
+        <form action="{% url 'resetpass' %}" method="POST" class="inputs">
             {% csrf_token %}
             <div class="inputs__item inputs__item--new">
                 <!-- <label> Enrollment Number </label>    -->
-                <input type="text" class="inputs__input" id="previous-password" name="EnrollmentNumber1"
-                    placeholder="Enrollment Number" size="9" required />
+                <input type="text" class="inputs__input" id="previous-password" name="email" placeholder="Email"
+                    required />
             </div>
             <div class="inputs__item">
                 <!-- <label for="previous-password" class="inputs__label">Previous password</label> -->
@@ -167,7 +167,7 @@
             <div class="inputs__item">
                 <!-- <label for="new-password" class="inputs__label">New password</label> -->
                 <input type="password" class="inputs__input" id="previous-password" name="newpass"
-                    placeholder="Enter new password b/w 5-20 characters" />
+                    placeholder="New Password(more than 8 characters)" />
             </div>
             <div class="inputs__item inputs__item--cta">
                 <input type="submit" class="btn" value="RESET" />
