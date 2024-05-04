@@ -75,12 +75,19 @@ WSGI_APPLICATION = 'power_consumption.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'powersight',
+    #     'USER': 'root',
+    #     'PASSWORD': 'nikhil2002',
+    #     'HOST': 'localhost',
+    #     'PORT': '3306',
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'powersight',
-        'USER': 'root',
-        'PASSWORD': 'nikhil2002',
-        'HOST': 'localhost',
+        'USER': 'admin',
+        'PASSWORD': 'Nikhil2002',
+        'HOST': 'powersight.cdy8ikaymuro.ap-south-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }

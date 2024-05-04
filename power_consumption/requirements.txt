@@ -1,0 +1,5 @@
+numerize
+streamlit_option_menu
+streamlit
+plotly
+openpyxl

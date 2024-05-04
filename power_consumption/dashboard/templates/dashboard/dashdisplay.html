@@ -10,6 +10,11 @@
 <body>
     <H1> Hello {{first_name}} {{last_name}}</H1><br>
     <H2>Welcome to Dashboard</H2>
+
+    <form action="{% url 'streamlit' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Go to Streamlit" />
+    </form>
 </body>
 
 </html>

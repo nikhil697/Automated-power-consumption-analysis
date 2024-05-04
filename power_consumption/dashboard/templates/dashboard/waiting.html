@@ -1,0 +1,141 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waiting Page</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        p {
+            color: #6c757d;
+            margin-top: 20px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            margin: 20px auto;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script>
+        // Close the waiting page and redirect to dashboard page after Streamlit is launched
+        window.onload = function () {
+            // Open Streamlit app in a new tab or window
+            var streamlitWindow = window.open("http://localhost:8501/", "_blank");
+
+            // Close the waiting page
+            window.close();
+
+            // Redirect to the dashboard page after a short delay (adjust the delay as needed)
+            setTimeout(function () {
+                window.location.href = "{% url 'dash' %}";
+            }, 2000); // Adjust the delay in milliseconds (e.g., 1000ms = 1 second)
+        };
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Processing Request</h1>
+        <div class="spinner"></div>
+        <p>Please wait while we load the Streamlit app...</p>
+    </div>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waiting Page</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        p {
+            color: #6c757d;
+            margin-top: 20px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            margin: 20px auto;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Processing Request</h1>
+        <div class="spinner"></div>
+        <p>Please wait while we load the Streamlit app...</p>
+    </div>
+
+    <button><a href="{% url 'dash' %}">Go back to Login Page</a></button>
+</body>
+
+</html>

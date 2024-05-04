@@ -6,7 +6,10 @@ from decouple import config
 import mysql
 from django.db import connection,IntegrityError,transaction
 from mysql.connector import Error
+import subprocess
+from django.shortcuts import redirect
 # Create your views here.
+conne = mysql.connector.connect(user='admin', password='Nikhil2002', host='powersight.cdy8ikaymuro.ap-south-1.rds.amazonaws.com', database='powersight')
 
 def index(request):
     return HttpResponse("Index Dashboard")
@@ -56,7 +59,7 @@ def dash(request):
         password=request.POST.get("psw")
 
         try:
-            conne = mysql.connector.connect(user='root', password='nikhil2002', host='localhost', database='powersight')
+            conne
             cursor = conne.cursor()
             query = f"SELECT * FROM credentials WHERE email_address = '{Email}' AND password = '{password}'"
             cursor.execute(query)
@@ -66,7 +69,7 @@ def dash(request):
                     first_name_query = f"SELECT first_name FROM credentials WHERE email_address='{Email}'"
                     last_name_query = f"SELECT last_name FROM credentials WHERE email_address='{Email}'"
 
-                    conne = mysql.connector.connect(user='root', password='nikhil2002', host='localhost', database='powersight')
+                    conne
                     cursor = conne.cursor()
 
                     cursor.execute(first_name_query)
@@ -78,6 +81,7 @@ def dash(request):
                     last_name = last_name_result[0] if last_name_result else None
 
                     conne.close()
+                    
 
                     return render(request, 'dashboard/dashdisplay.html', {'first_name': first_name, 'last_name': last_name})
             else:
@@ -98,7 +102,7 @@ def resetpass(request):
         email_address = request.POST.get('email')
         prevpass = request.POST.get('prevpass')
         newpass = request.POST.get('newpass')
-        conne = mysql.connector.connect(user='root', password='nikhil2002', host='localhost', database='powersight')
+        conne
         cursor = conne.cursor()
         query = f"UPDATE credentials SET password = '{newpass}' WHERE email_address = '{email_address}' AND password = '{prevpass}'"
         cursor.execute(query)
@@ -119,5 +123,11 @@ def resetpass(request):
         return render(request, 'dashboard/resetpass.html')
 def resetsuccess(request):
     return render(request, 'dashboard/resetsuccess.html')
+
+def streamlit_view(request):
+    # Redirect the user to the Streamlit app
+    subprocess.Popen(['streamlit', 'run', 'D:\Study\Automated-power-consumption-analysis\power_consumption\dashboard\streamlit\Main.py'])
+    
+    return render(request,'dashboard/waiting.html')
 
 
