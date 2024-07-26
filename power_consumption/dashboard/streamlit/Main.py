@@ -257,9 +257,15 @@ st.markdown(custom_css, unsafe_allow_html=True)
 # st.set_page_config(page_title="PowerSight", layout="wide")
 
 # Establish connection to MySQL database
-connection = pymysql.connect(host='powersight.cdy8ikaymuro.ap-south-1.rds.amazonaws.com',
-                             user='admin',
-                             password='Nikhil2002',
+# connection = pymysql.connect(host='powersight.cdy8ikaymuro.ap-south-1.rds.amazonaws.com',
+#                              user='admin',
+#                              password='Nikhil2002',
+#                              database='powersight',
+#                              charset='utf8mb4',
+#                              cursorclass=pymysql.cursors.DictCursor)
+connection = pymysql.connect(host='localhost',
+                             user='root',
+                             password='nikhil2002',
                              database='powersight',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
@@ -372,3 +378,5 @@ with col2:
     st.write(f"Maximum Ampere: <span class='metric-value'>{filtered_df['AMP'].max():.2f} A</span>", unsafe_allow_html=True)
     st.write(f"Maximum KWH: <span class='metric-value'>{filtered_df['KWH'].max():.2f}</span>", unsafe_allow_html=True)
     st.write(f"Maximum O_L: <span class='metric-value'>{filtered_df['O_L'].max():.2f}</span>", unsafe_allow_html=True)
+
+# line 197- 380

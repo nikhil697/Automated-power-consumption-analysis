@@ -2,14 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse,request
 from .models import *
 from django.core.mail import send_mail
-from decouple import config
 import mysql
 from django.db import connection,IntegrityError,transaction
 from mysql.connector import Error
 import subprocess
 from django.shortcuts import redirect
 # Create your views here.
-conne = mysql.connector.connect(user='admin', password='Nikhil2002', host='powersight.cdy8ikaymuro.ap-south-1.rds.amazonaws.com', database='powersight')
+# conne = mysql.connector.connect(user='admin', password='Nikhil2002', host='powersight.cdy8ikaymuro.ap-south-1.rds.amazonaws.com', database='powersight')
+conne = mysql.connector.connect(user='root', password='nikhil2002', host='localhost', database='powersight')
 
 def index(request):
     return HttpResponse("Index Dashboard")
