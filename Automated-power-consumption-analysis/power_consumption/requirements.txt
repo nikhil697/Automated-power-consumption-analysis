@@ -1,0 +1,8 @@
+numerize
+streamlit_option_menu
+streamlit
+plotly
+openpyxl
+mysqlclient
+mysql-connector-python
+python-decouple
